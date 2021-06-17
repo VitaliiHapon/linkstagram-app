@@ -1,0 +1,205 @@
+.auth-box-desktop {
+    min-width: 360px;
+    min-height: 658px;
+    width: 360px;
+    height: 658px;
+}
+
+.phone-box-desktop {
+    width: 338px;
+    height: 658px;
+    margin-right: 253px;
+    position: relative;
+}
+
+.phone-box-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 338px;
+    height: 658px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-phone.png');
+    background-repeat: no-repeat;
+    background-size: 338px 658px;
+}
+
+.phone-box-image-1L {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 212px;
+    height: 212px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-photo-1.png');
+    background-repeat: no-repeat;
+    background-size: 212px 212px;
+    border-radius: 16px;
+    animation: 300ms ease-out 0s forwards alternate image_1L_anim;
+}
+
+.phone-box-image-2L {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 212px;
+    height: 212px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-photo-2.png');
+    background-repeat: no-repeat;
+    background-size: 212px 212px;
+    border-radius: 16px;
+    animation: 300ms ease-out 0s forwards alternate image_2L_anim;
+    z-index: 10;
+}
+
+.phone-box-image-3L {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 212px;
+    height: 212px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-photo-3.png');
+    background-repeat: no-repeat;
+    background-size: 212px 212px;
+    border-radius: 16px;
+    animation: 300ms ease-out 0s forwards alternate image_3L_anim;
+}
+
+@keyframes image_1L_anim {
+    from {
+        transform: translateY(268px) translateX(-164px);
+        z-index: 10;
+    }
+    to {
+        transform: translateY(268px) translateX(250px) scaleX(0.5) scaleY(0.5) translateZ(-10px);
+        z-index: -1;
+    }
+}
+
+@keyframes image_2L_anim {
+    from {
+        transform: translateY(505px) translateX(274px) scaleX(0.75) scaleY(0.75);
+    }
+    to {
+        transform: translateY(268px) translateX(-164px) scaleX(1) scaleY(1);
+    }
+}
+
+@keyframes image_3L_anim {
+    from {
+        transform: translateY(268px) translateX(250px) scaleX(0.5) scaleY(0.5) translateZ(-10px);
+        z-index: -1;
+    }
+    to {
+        transform: translateY(505px) translateX(274px) scaleX(0.75) scaleY(0.75);
+        z-index: 10;
+    }
+}
+
+.phone-box-image-1S {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 212px;
+    height: 212px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-photo-1.png');
+    background-repeat: no-repeat;
+    background-size: 212px 212px;
+    border-radius: 16px;
+    animation: 300ms ease-out 0s forwards alternate image_1S_anim;
+}
+
+.phone-box-image-2S {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 212px;
+    height: 212px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-photo-2.png');
+    background-repeat: no-repeat;
+    background-size: 212px 212px;
+    border-radius: 16px;
+    animation: 300ms ease-out 0s forwards alternate image_2S_anim;
+    z-index: 10;
+}
+
+.phone-box-image-3S {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 212px;
+    height: 212px;
+    background: #FAFBFC;
+    box-shadow: 0px 5.31106px 84.977px rgba(0, 0, 0, 0.15);
+    border-radius: 21.2443px;
+    background: url('images/auth-background-photo-3.png');
+    background-repeat: no-repeat;
+    background-size: 212px 212px;
+    border-radius: 16px;
+    animation: 300ms ease-out 0s forwards alternate image_3S_anim;
+}
+
+@keyframes image_1S_anim {
+    from {
+        transform: translateY(268px) translateX(250px) scaleX(0.5) scaleY(0.5) translateZ(-10px);
+        z-index: -1;
+    }
+    to {
+        transform: translateY(268px) translateX(-164px);
+        z-index: 10;
+    }
+}
+
+@keyframes image_2S_anim {
+    from {
+        transform: translateY(268px) translateX(-164px) scaleX(1) scaleY(1);
+    }
+    to {
+        transform: translateY(505px) translateX(274px) scaleX(0.75) scaleY(0.75);
+    }
+}
+
+@keyframes image_3S_anim {
+    from {
+        transform: translateY(505px) translateX(274px) scaleX(0.75) scaleY(0.75);
+        z-index: 10;
+    }
+    to {
+        transform: translateY(268px) translateX(250px) scaleX(0.5) scaleY(0.5) translateZ(-10px);
+        z-index: -1;
+    }
+}
+
+.auth-page-container {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-flex-container {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}

@@ -1,0 +1,62 @@
+.nav-header {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.logo-label-desktop {
+    margin: 28px 64px;
+}
+
+.logo-label-tablet {
+    margin: 28px 74px;
+}
+
+.logo-label-mobile {
+    margin: 16px;
+}
+
+.logo-label {
+    font-family: Poppins;
+    font-style: italic;
+    font-weight: 800;
+    font-size: 15.6735px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: -0.0489796px;
+    color: #010101;
+    text-align: left;
+}
+
+.nav-bar-background {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    overflow: visible;
+    z-index: 10;
+}
+
+.nav-bar-rect {
+    height: 64px;
+}
+
+.nav-bar-lang-select {
+    position: absolute;
+    top: 0;
+    right: 18px;
+}
+
+.nav-bar-avatar {
+    position: fixed;
+    right: 64px;
+}
+
+.nav-bar-home-button {
+    position: fixed;
+    right: 64px;
+    top: 0;
+}

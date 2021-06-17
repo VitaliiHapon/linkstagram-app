@@ -1,0 +1,99 @@
+.profile-info-buttons {
+    margin-top: 17px;
+}
+
+.profile-info-buttons-container-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 12px;
+}
+
+.profile-info-buttons-container-table {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-info-new-post-button {
+    margin-right: 12px;
+}
+
+.profile-info-description {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #808080;
+    margin-top: 17px;
+}
+
+.profile-info-follow-count {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    align-items: center;
+    text-align: center;
+    color: #010101;
+}
+
+.profile-info-avatar {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.profile-info-container {}
+
+.profile-info-lower-container {}
+
+.profile-info-title-row {
+    display: table;
+    margin-top: 17px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile-info-dash {
+    color: #010101;
+    opacity: 0.5;
+    margin: 8px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.profile-info-title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+    text-align: center;
+}
+
+.profile-info-follow {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    /* identical to box height, or 125% */
+    text-align: center;
+    /* Gray */
+    color: #C9CAD1;
+}
+
+.profile-info-upper-container {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: start
+}

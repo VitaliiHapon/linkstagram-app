@@ -1,0 +1,260 @@
+.blue-button {
+    border: none;
+    background: #0087FF;
+    border-radius: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+}
+
+.blue-button:hover {
+    background: #93cdff;
+}
+
+.blue-button:active {
+    background: #ffffff;
+    border: 1px solid gray;
+    color: black;
+}
+
+.black-button {
+    border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+    background: #010101;
+    border: 0.5px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 40px;
+    width: 85px;
+}
+
+.black-button:hover {
+    background: gray;
+}
+
+.black-button:active {
+    background: #ffffff;
+    border: 1px solid gray;
+    color: black;
+}
+
+.light-white-button {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #808080;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.5px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 40px;
+    width: 85px;
+}
+
+.light-white-button:hover {
+    background: darkgray;
+}
+
+.light-white-button:active {
+    background: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.white-button {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #010101;
+    width: 100%;
+    border: none;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    height: 40px;
+}
+
+.white-button:hover {
+    background: lightgray;
+}
+
+.white-button:active {
+    background: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.red-white-button {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #FB766E;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.5px solid #FB766E;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 40px;
+    width: 85px;
+}
+
+.red-white-button:hover {
+    background: #ff928d;
+    border: 1px solid white;
+    color: white;
+}
+
+.red-white-button:active {
+    background: darkgray;
+}
+
+.error-label {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    text-align: left;
+    padding-left: 16px;
+    padding-top: 4px;
+    color: #ec5757;
+}
+
+.common-form-label {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #808080;
+    text-align: left;
+    margin-bottom: 2px;
+}
+
+.common-form-input::placeholder {
+    color: #010101;
+    opacity: 0.25;
+}
+
+.common-form-input {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    width: 100%;
+    padding: 14px;
+}
+
+.common-form-field {
+    margin-bottom: 16px;
+}
+
+.form-validation-icon {
+    position: absolute;
+    right: 16px;
+    bottom: calc(50% - 12px);
+}
+
+.common-form-input-container {
+    position: relative;
+}
+
+.common-avatar-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 88%;
+    max-height: 88%;
+    margin: 5%;
+    border-radius: 25%;
+    border: 0.5px solid #C9CAD1;
+    object-fit: cover;
+}
+
+.common-avatar-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.common-avatar-icon-container {
+    position: relative;
+}
+
+.common-dropdown-container {
+    max-width: 64px;
+}
+
+.common-dropdown-list-item {
+    padding: 8px 24px;
+    text-align: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.common-dropdown-list-box {
+    max-height: auto;
+    background: #FFFFFF;
+    background: white;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 0px 0px 12px 12px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    z-index: -4 !important;
+}
+
+.common-dropdown-selected-item {
+    width: 40px;
+    height: 40px;
+    border: 0.5px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    background: #FFFFFF;
+    margin: auto 12px;
+}
+
+.common-dropdown-selected-item:hover {
+    background: lightgray;
+}
+
+.common-dropdown-list-item:hover {
+    color: gray;
+}

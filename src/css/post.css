@@ -1,0 +1,146 @@
+.post-header-container {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 12px;
+}
+
+.post-footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    align-self: flex-start;
+}
+
+.post-post-date {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #010101;
+    opacity: 0.25;
+}
+
+.post-avatar {
+    margin-right: 16px;
+}
+
+.post-user-name {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #010101;
+}
+
+.post-description {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #808080;
+    margin-top: 16px;
+    margin-bottom: 12px;
+    display: table;
+}
+
+.post-numbers {
+    display: inline-block;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin: 2px 8px;
+}
+
+.post-menu-container {
+    position: relative;
+    margin-left: auto;
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.post-menu {
+    position: absolute;
+    background: #FFFFFF;
+    border: 0.5px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    border-top-right-radius: 0;
+    transform: translateX(-80%) translateY(-30%);
+    padding: 3px 12px;
+    z-index: 3000;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #808080;
+    cursor: pointer;
+}
+
+.post-clickable {
+    cursor: pointer;
+}
+
+.post-menu-delete-button:hover {
+    color: #FB766E;
+    border-color: #FB766E;
+}
+
+.post-menu-button:hover {
+    opacity: 0.7;
+}
+
+.post-comments-container {
+    animation: 300ms ease-out 0s forwards alternate post_comments_container_anim;
+}
+
+@keyframes post_comments_container_anim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.post-modal-images {
+    width: 599px;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+.post-modal-container {
+    display: grid;
+    grid-template-columns: 599px auto;
+}
+
+.post-modal-header {
+    display: flex;
+    left: 599px;
+    border-bottom: 0.5px solid #C9CAD1;
+    padding-left: 33px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-right: auto;
+}
+
+.post-modal-username {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #010101;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 16px;
+}
