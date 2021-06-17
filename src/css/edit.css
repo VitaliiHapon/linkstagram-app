@@ -1,0 +1,169 @@
+.edit-modal-tittle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 54px;
+    color: #000000;
+}
+
+.edit-modal-container {
+    margin: 48px;
+    margin-bottom: 70px;
+}
+
+.edit-modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-modal-middle-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 12px;
+    margin-top: 32px;
+}
+
+.edit-modal-buttons-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 12px;
+}
+
+.edit-modal-job-desc-container {
+    display: grid;
+    grid-template-columns: 100%;
+    margin-top: 32px;
+}
+
+.edit-modal-fname-container {}
+
+.edit-modal-lname-container {
+    margin-top: 24px;
+}
+
+.edit-modal-job-input {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.edit-modal-description-input {
+    display: grid;
+    grid-template-columns: 100%;
+    margin-bottom: 48px;
+    margin-top: 32px;
+}
+
+.edit-modal-label-text {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #808080;
+}
+
+.edit-modal-input {
+    background: #FFFFFF;
+    border: 1px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #010101;
+    padding: 10px 14px;
+}
+
+.edit-modal-input-40 {
+    height: 40px;
+}
+
+.edit-modal-input-48 {
+    height: 48px;
+}
+
+.edit-modal-input-68 {
+    height: 68px;
+    vertical-align: top;
+    resize: none;
+}
+
+.edit-modal-white-button {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #010101;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.5px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 48px;
+}
+
+.edit-modal-white-button:hover {
+    background: darkgray;
+}
+
+.edit-modal-white-button:active {
+    background: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.edit-modal-blue-button {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100%;
+    background: #0087FF;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 48px;
+}
+
+.edit-modal-blue-button:hover {
+    background: darkgray;
+}
+
+.edit-modal-blue-button:active {
+    background: black;
+    border: 1px solid black;
+    color: white;
+}
+
+.edit-modal-log-out-button {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    color: #FB766E;
+    border: none;
+    background: none;
+    margin-top: 24px;
+    padding: 3px
+}
+
+.edit-modal-log-out-button:hover {
+    border: 0.5px solid #FB766E;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+
+.edit-modal-log-out-button:active {
+    color: white;
+    background-color: #FB766E;
+}
