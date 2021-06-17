@@ -1,5 +1,4 @@
 import axios from "axios";
-import { number } from "prop-types";
 import { API_URL } from "../utils/api";
 import { getAuthHeader } from "../utils/auth";
 
@@ -52,6 +51,11 @@ export namespace api {
         message: string
     }
 
+    export type LikeInfo = {
+        isLiked: boolean,
+        likesCount: number
+    }
+
 
     export function getPost(id: number, callback: (response: PostInfo) => void) {
         return axios.get<PostInfo>(API_URL + "/posts/" + id, getAuthHeader()).then(v => callback(v.data));
@@ -83,11 +87,11 @@ export namespace api {
 
 
     export function setLike(id: number, callback: (success: boolean) => void) {
-        return axios.post(API_URL + "/posts/" + id + "/like", {}, getAuthHeader()).then(v => callback(v.status == 200));
+        return axios.post(API_URL + "/posts/" + id + "/like", {}, getAuthHeader()).then(v => callback(v.status === 200));
     }
 
     export function removeLike(id: number, callback: (success: boolean) => void) {
-        return axios.delete(API_URL + "/posts/" + id + "/like",  getAuthHeader()).then(v => callback(v.status == 200));
+        return axios.delete(API_URL + "/posts/" + id + "/like",  getAuthHeader()).then(v => callback(v.status === 200));
     }
 
 
