@@ -1,0 +1,37 @@
+.new-post-modal-input-108 {
+    height: 108px;
+}
+
+.new-post-modal-image-container {
+    position: relative;
+    height: 345px;
+}
+
+.new-post-modal-background-container {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+}
+
+.new-post-modal-load-container {
+    position: relative;
+    height: 345px;
+}
+
+.new-post-modal-image-file-upload {
+    position: absolute;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 0px 0px 7px 7px;
+    background: #010101;
+    opacity: 0.5;
+    bottom: 0px;
+    left: 0px;
+    width: 480px;
+    overflow: hidden;
+}

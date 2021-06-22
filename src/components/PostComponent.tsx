@@ -15,17 +15,17 @@ type PostState = {
     postId: number,
     post?: api.PostInfo | null;
     comments?: api.PostComment[] | null;
-    isLiked: boolean,
-    likesCount: number,
+    likeInfo: api.LikeInfo,
     menuOpened: boolean,
     deleted: boolean,
     commentsVisible: boolean
 }
 
+
 type PostComponentProps = {
     postId?: number,
     post?: api.PostInfo,
-    onPostOpen?: (post?: api.PostInfo | null, comments?: api.PostComment[] ) => void
+    onPostOpen?: (onComment: () => void, onLike: () => void, likeInfo: api.LikeInfo, post?: api.PostInfo | null, comments?: api.PostComment[]) => void
 }
 
 class PostComponent extends React.Component<PostComponentProps, PostState>{
@@ -34,22 +34,22 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
         this.state = {
             postId: this.props.postId ?? this.props.post?.id ?? -1,
             post: null,
-            isLiked: false,
-            likesCount: 0,
+            likeInfo: { isLiked: false, likesCount: 0 },
             menuOpened: false,
             deleted: false,
             commentsVisible: false
         }
 
-        let setPost = (response: any) => {
+    }
 
+    componentDidMount() {
+        let setPost = (response: any) => {
             this.setState({
                 post: response,
-                isLiked: response?.is_liked ?? false,
-                likesCount: response.likes_count
-            }, () => {
-                console.log("RD")
-                console.log(this)
+                likeInfo: {
+                    isLiked: response?.is_liked ?? false,
+                    likesCount: response.likes_count
+                }
             });
         }
 
@@ -62,13 +62,17 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
         api.getPostComments(this.state.postId, (response) => {
             this.setState({ comments: response });
         })
+    }
 
-
+    refreshComments() {
+        api.getPostComments(this.state.postId, (response) => {
+            this.setState({ comments: response });
+        })
     }
 
 
     renderLikeIcon() {
-        if (this.state.isLiked) {
+        if (this.state.likeInfo.isLiked) {
             return (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0)">
                     <path d="M12 6.75L10.0758 5.26982C6.87868 2.81053 2.25 5.0897 2.25 9.12323C2.25 10.9652 2.98172 12.7317 4.28418 14.0342L10.7197 20.4697C11.0592 20.8092 11.5198 21 12 21C12.4802 21 12.9408 20.8092 13.2803 20.4697L19.7158 14.0342C21.0183 12.7317 21.75 10.9652 21.75 9.12323C21.75 5.0897 17.1213 2.81053 13.9242 5.26982L12 6.75Z" fill="#FB766E" />
@@ -101,11 +105,14 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
                 return;
 
             this.setState({
-                isLiked: liked,
-                likesCount: (liked ? this.state.likesCount + 1 : this.state.likesCount - 1)
+                likeInfo: {
+                    isLiked: liked,
+                    likesCount: (liked ? this.state.likeInfo.likesCount + 1 : this.state.likeInfo.likesCount - 1)
+                }
             });
+
         }
-        if (this.state.isLiked)
+        if (this.state.likeInfo.isLiked)
             api.removeLike(this.state.postId, (x) => callback(x, false));
         else
             api.setLike(this.state.postId, (x) => callback(x, true));
@@ -130,13 +137,13 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
         if (!this.state.menuOpened)
             return null;
         else {
-            let sameAuthor = this.state.post?.author.username == getUsername();
+            let sameAuthor = this.state.post?.author.username === getUsername();
             return (<ClickAwayListener onClickAway={() => { this.setState({ menuOpened: !this.state.menuOpened }) }}>
                 <div className={"post-menu" + (sameAuthor ? " post-menu-delete-button" : "")}
                     style={{ color: sameAuthor ? "" : "#DFDFDF" }}
                     onClick={() => { if (sameAuthor) this.deletePost() }}>
                     Delete
-                 </div>
+                </div>
             </ClickAwayListener>)
         }
     }
@@ -160,7 +167,7 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
     }
 
     onPostOpen() {
-        if (this.props.onPostOpen) this.props.onPostOpen(this.state.post, this.state.comments ?? []);
+        if (this.props.onPostOpen) this.props.onPostOpen(() => { this.refreshComments() }, () => { this.likePost() }, this.state.likeInfo, this.state.post, this.state.comments ?? []);
     }
 
     render() {
@@ -178,7 +185,7 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
 
                         <div className="post-post-date"> {timeSince(new Date(this.state.post?.created_at ?? ""))}</div>
                     </div>
-                    <div className="post-menu-container post-clickable">
+                    <div  className="post-menu-container post-clickable">
                         <div className="post-menu-button" onClick={() => this.setState({ menuOpened: !this.state.menuOpened })}>
                             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g opacity="0.25">
@@ -192,7 +199,7 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
                     </div>
                 </div>
                 <div className="post-clickable">
-                    {this.renderImages(() => { this.onPostOpen()})}
+                    {this.renderImages(() => { this.onPostOpen() })}
                 </div>
                 <div className="post-description">
                     {this.state.post?.description ?? ""}
@@ -202,7 +209,7 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
                         {this.renderLikeIcon()}
                     </div>
                     <span className="post-numbers">
-                        {this.state.likesCount}
+                        {this.state.likeInfo.likesCount}
                     </span>
 
                     <span className="post-clickable " onClick={() => {
@@ -218,7 +225,6 @@ class PostComponent extends React.Component<PostComponentProps, PostState>{
 
                 </div>
                 {this.renderComments()}
-
             </div>
         )
     }

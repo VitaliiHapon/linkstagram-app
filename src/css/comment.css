@@ -38,3 +38,41 @@
     margin-top: 4px;
     margin-left: 40px;
 }
+
+.comment-container-desktop {
+    display: flex;
+}
+
+.comment-avatar-desktop {
+    margin-top: 14px;
+    margin-bottom: 12px;
+    height: 40px;
+    width: 40px;
+}
+
+.comment-content-desktop {
+    margin-top: 11px;
+    margin-bottom: 12px;
+}
+
+.comment-avatar-desktop {
+    margin-right: 12px;
+}
+
+.comment-time-desktop {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #C9CAD1;
+}
+
+.comment-message-desktop {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #010101;
+}

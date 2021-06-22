@@ -2,6 +2,7 @@ import { link } from "fs";
 import React from "react";
 import { Link } from "react-router-dom";
 import '../css/nav-bar.css';
+import { imageUrlOrDefault } from "../utils/utils";
 
 
 type AvatarIconData = {
@@ -11,20 +12,31 @@ type AvatarIconData = {
     active: boolean;
 }
 class AvatarIcon extends React.Component<AvatarIconData, any> {
+    imageUrl = imageUrlOrDefault(this.props.imageUrl);
     constructor(props: any) {
         super(props);
         this.state = {
-            imageUrl: this.props.imageUrl ?? process.env.PUBLIC_URL + '/images/no-avatar.png'
+            imageUrl: '',
+            notLoaded: true
         }
     }
 
+    componentDidMount() {
+        this.setState({
+            imageUrl: imageUrlOrDefault(this.props.imageUrl),
+            notLoaded: false
+        })
+    }
+
     renderAvatar() {
+        if(this.state.notLoaded)
+            return null;
         return (
-            <div style={{ width: this.props.size as number, height: this.props.size as number, cursor: (this.props.link != null ?"pointer":"unset") }} className="common-avatar-icon-container">
+            <div style={{ width: this.props.size as number, height: this.props.size as number, cursor: (this.props.link != null ? "pointer" : "unset") }} className="common-avatar-icon-container">
                 <img
                     style={{ width: this.props.size as number, height: this.props.size as number }}
                     className="common-avatar-icon"
-                    src={this.state.imageUrl}></img>
+                    src={this.imageUrl}></img>
                 {this.props.active ?
 
 
@@ -48,9 +60,11 @@ class AvatarIcon extends React.Component<AvatarIconData, any> {
     render() {
         if (this.props.link != undefined)
             return (
-                <Link to={this.props.link ?? "" }>
-                    {this.renderAvatar()}
-                </Link>
+                <div onClick={() => window.location.reload()}>
+                    <Link to={this.props.link ?? ""}  >
+                        {this.renderAvatar()}
+                    </Link>
+                </div>
             )
         else
             return this.renderAvatar()

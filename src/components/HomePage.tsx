@@ -5,6 +5,7 @@ import PostComponent from "./PostComponent";
 import PostModal from "./PostModal";
 import '../css/home.css'
 import EditModal from "./EditModal";
+import UserListComponent from "./UserListComponents";
 
 type HomePageState = {
     posts: api.PostInfo[]
@@ -31,10 +32,16 @@ class HomePage extends React.Component<any, HomePageState>{
                 isLiked: false,
                 likesCount: 0
             },
-
         }
+    }
 
-        api.getAllPosts((x) => this.setState({ posts: x }));
+    componentDidMount() {
+        api.getAllPosts((x) => 
+        {
+            console.log(x)
+        this.setState({ posts: x })
+        
+    });
     }
 
     renderPostModal() {
@@ -78,12 +85,17 @@ class HomePage extends React.Component<any, HomePageState>{
                         <div>
                             {this.state.posts.map((x) => this.renderPost(x))}
                         </div>
-                    </div>
+                    </div> 
                 </MobileView>
                 <BrowserView>
-                <div className="home-page-container-mobile">
-                        <div>
-                            {this.state.posts.map((x) => this.renderPost(x))}
+                    <div className="home-page-container">
+                        <div className="home-page-users-container">
+                            <UserListComponent iconSize={40} />
+                        </div>
+                        <div className="home-page-container-desktop">
+                            <div>
+                                {this.state.posts.map((x) => this.renderPost(x))}
+                            </div>
                         </div>
                     </div>
                 </BrowserView>

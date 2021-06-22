@@ -19,8 +19,8 @@
 
 .edit-modal-middle-container {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 12px;
+    grid-template-columns: 148px auto;
+    grid-gap: 40px;
     margin-top: 32px;
 }
 
@@ -51,7 +51,6 @@
     display: grid;
     grid-template-columns: 100%;
     margin-bottom: 48px;
-    margin-top: 32px;
 }
 
 .edit-modal-label-text {
@@ -61,6 +60,10 @@
     font-size: 12px;
     line-height: 20px;
     color: #808080;
+}
+
+.edit-modal-description-label {
+    margin-top: 32px;
 }
 
 .edit-modal-input {
@@ -166,4 +169,37 @@
 .edit-modal-log-out-button:active {
     color: white;
     background-color: #FB766E;
+}
+
+.edit-modal-image-container {
+    position: relative;
+    border: 1px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 8px;
+    max-width: 148px;
+    max-height: 148px;
+}
+
+.edit-modal-image {
+    width: 148px;
+    height: 148px;
+    object-fit: cover;
+}
+
+.edit-modal-image-file-upload {
+    position: absolute;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    border-radius: 0px 0px 7px 7px;
+    background: #010101;
+    opacity: 0.5;
+    bottom: 0px;
+    left: 0px;
+    width: 148px;
+    overflow: hidden;
 }

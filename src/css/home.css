@@ -1,0 +1,17 @@
+.home-page-container-mobile {
+    margin: 16px;
+}
+
+.home-page-post {
+    margin-bottom: 24px;
+}
+
+.home-page-container {
+    width: 560px;
+    margin: auto;
+}
+
+.home-page-users-container {
+    margin-top: 48px;
+    margin-bottom: 48px;
+}

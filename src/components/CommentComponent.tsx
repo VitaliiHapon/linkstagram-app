@@ -16,15 +16,13 @@ class CommentComponent extends React.Component<CommentComponentProps, any>{
         return <div >
             <BrowserView>
                 <div className="comment-container-desktop">
-                    <div className="comment-avatar-desktop" >
-                        <AvatarIcon imageUrl={this.props.comment.commenter.profile_photo_url} size={32} active={false} />
-                    </div>
-                    <div>
-                        <div className="comment-username-desktop"> {getUserName(this.props.comment.commenter)} </div>
+                    <div className="comment-avatar-desktop" ><AvatarIcon imageUrl={this.props.comment.commenter.profile_photo_url} size={42} active={false} /></div>
+                    <div className="comment-content-desktop">
+                        <div className="comment-message-desktop">{this.props.comment.message}</div>
                         <div className="comment-time-desktop">{timeSince(new Date(this.props.comment.created_at))} </div>
                     </div>
                 </div>
-                <div className="comment-message-desktop">{this.props.comment.message}</div>
+
             </BrowserView>
             <MobileView>
                 <div className="comment-container">

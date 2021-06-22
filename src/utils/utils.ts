@@ -20,3 +20,7 @@ export function getUserName(user: api.ProfileInfo | null | undefined): string{
         return user?.username as string;
     return (first_name ?? "") + space + (last_name ?? "");
 }
+
+export function imageUrlOrDefault(url: string | undefined | null){
+    return url ?? process.env.PUBLIC_URL + '/images/no-avatar.png'
+}

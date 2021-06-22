@@ -1,6 +1,4 @@
 import React from "react";
-import { authApi } from "../adapters/auth";
-import { photosApi } from "../adapters/photos";
 import '../css/image-carousel.css';
 
 type ImageCarouselProps = {

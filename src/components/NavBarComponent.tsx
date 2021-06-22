@@ -17,8 +17,6 @@ type NavBarProps = {
 
 class NavBarComponent extends React.Component<NavBarProps, any> {
 
-
-
     constructor(props: any) {
         super(props)
         this.state = {
@@ -30,15 +28,22 @@ class NavBarComponent extends React.Component<NavBarProps, any> {
             atHome: false
         }
 
+    }
+
+    componentDidMount() {
+
         profilesApi.getAccount((x) => {
             this.setState({
-                avatarUrl: x.profile_photo_url
+                avatarUrl: x.profile_photo_url,
+
             })
         });
+
 
     }
 
     renderAvatar(right: number) {
+
         return (
             <div className="nav-bar-avatar" style={{ top: this.state.topOffset, right: right }}>
                 <Link to="/profile">
@@ -59,6 +64,29 @@ class NavBarComponent extends React.Component<NavBarProps, any> {
         );
     }
 
+    renderLogin() {
+        return (
+            <Link to="/login" >
+                <button className={(!isMobile ? "hard-white-button" : "black-button") + " nav-bar-home-button"}
+                    style={{ top: this.state.topOffset, right: isMobile ? 16 : 150 - 24 }}>
+                    {"Log In"}
+                </button>
+            </Link>
+        );
+    }
+
+    renderPosts() {
+        return (
+            <Link to="/" >
+                <button className={(isMobile ? "light-white-button" : "black-button") + " nav-bar-home-button"}
+                    style={{ top: this.state.topOffset, right: isMobile ? 16 : 150 - 24 }}>
+                    {"Posts"}
+                </button>
+            </Link>
+        );
+    }
+
+
     renderMobileButtons() {
         if (!isMobile)
             return null;
@@ -70,7 +98,12 @@ class NavBarComponent extends React.Component<NavBarProps, any> {
                     : this.renderHome()
                 }
             </div>
-            : null
+            : <div>
+                {this.props.location.pathname === "/"
+                    ? this.renderLogin()
+                    : this.renderHome()
+                }
+            </div>
         );
     }
 
@@ -82,7 +115,12 @@ class NavBarComponent extends React.Component<NavBarProps, any> {
                 {this.renderAvatar(64)}
                 {this.renderHome()}
             </div>
-            : null
+            : <div>
+            {this.props.location.pathname === "/"
+                ? this.renderLogin()
+                : this.renderPosts()
+            }
+        </div>
         );
     }
 

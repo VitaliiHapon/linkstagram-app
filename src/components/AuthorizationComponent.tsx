@@ -31,8 +31,14 @@ class AuthorizationComponent extends React.Component<IAuthorizationProps, any> {
             password_err: null,
             user_name_err: null,
         };
+
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+
+    }
+
+    componentDidMount(){
+        
     }
 
     handleSubmit(event: any) {

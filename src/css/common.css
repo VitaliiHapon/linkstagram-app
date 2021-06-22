@@ -50,6 +50,23 @@
     color: black;
 }
 
+.hard-white-button {
+    font-family: Poppins;
+    font-style: normal;
+    line-height: 20px;
+    text-align: center;
+    color: black;
+    width: 100%;
+    background: #FFFFFF;
+    border: 0.5px solid #C9CAD1;
+    box-sizing: border-box;
+    border-radius: 12px;
+    height: 40px;
+    width: 85px;
+    font-weight: 600;
+    font-size: 12px;
+}
+
 .light-white-button {
     font-family: Poppins;
     font-style: normal;
@@ -192,7 +209,7 @@
     left: 0;
     max-width: 88%;
     max-height: 88%;
-    margin: 5%;
+    margin: 4.5%;
     border-radius: 25%;
     border: 0.5px solid #C9CAD1;
     object-fit: cover;
@@ -257,4 +274,14 @@
 
 .common-dropdown-list-item:hover {
     color: gray;
+}
+
+.common-user-list-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.common-user-list-icon {
+    margin-right: 24px;
 }
