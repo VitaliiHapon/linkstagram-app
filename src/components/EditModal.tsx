@@ -1,19 +1,18 @@
 import React from "react";
-import Modal from "../components/Modal"
-import "../css/edit.css"
-import "../css/common.css"
 import { Link } from "react-router-dom";
-import { api } from "../adapters/post";
 import { profilesApi } from "../adapters/profiles";
-import { imageUrlOrDefault } from "../utils/utils";
+import Modal from "../components/Modal";
+import "../css/common.css";
+import "../css/edit.css";
 import { createUppy, uploadFiles } from "../utils/uppy";
+import { imageUrlOrDefault } from "../utils/utils";
 
 type EditModalProps = {
     onClose(): any;
     visible: any;
 }
 
-class EditModal extends React.Component<EditModalProps, any>{
+class EditModal extends React.Component<EditModalProps | any, any>{
 
     uppy = createUppy(1);
 
@@ -59,21 +58,22 @@ class EditModal extends React.Component<EditModalProps, any>{
                 profile_photo: photo
             }, () => {
                 this.props.onClose();
-                window.location.href = "/profile"
+                window.location.reload();
             })
-            event.preventDefault();
+
         }
+
         if (this.state.files.length != 0) {
             uploadFiles(this.uppy, this.state.files, (x) => {
-                console.log("DFD");
-                console.log(x);
                 if (x.length != 0) {
                     patch(x[0].image);
-                    return;
                 }
-            })
+            });
         }
-        patch(null);
+        else {
+            patch(null);
+        }
+        event.preventDefault();
     }
 
     handleChange(event: any) {

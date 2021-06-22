@@ -65,7 +65,6 @@ export function uploadFiles(uppy: any, files: any, onReady: (data: PhotosAttribu
             
         });
         onReady(result);
-        console.log(result);
         uppy.cancelAll();
     });
 }
